@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
+import CardMoviesComponents from '../../Components/CardMovies';
 const HomeContainer = ()=>{
     const [content, setContent] = useState([]);
     const [pageno, setPageno] = useState(1)
@@ -34,7 +35,13 @@ const HomeContainer = ()=>{
                 <h3 className='txtCenter'>Tv and Movie For You</h3>
             </section>
                 </Col>
-     
+                {
+                    content && content.length > 0 ? content.map((item)=>{
+                        return (<CardMoviesComponents key={item.id} data={item} mediaType="tv"/>)
+                    }) : 'Loading ....'
+                }
+
+          
                 
             </Row>
         </Container>
