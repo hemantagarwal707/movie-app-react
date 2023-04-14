@@ -11,7 +11,8 @@ const HomeContainer = ()=>{
 
     const GetDataTrending = async ()=>{
         const {data} = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}&page=${pageno}`)
-        setContent(data);
+        setContent(data.results);
+        setPaginationno(data.total_pages);
         console.log('data',data);
 
     }
@@ -28,7 +29,10 @@ const HomeContainer = ()=>{
         <Container>
             <Row>
                 <Col className='col-12'>
-                    home page continer
+                <section>
+                <h1 className='txtCenter'>Top Trending </h1>
+                <h3 className='txtCenter'>Tv and Movie For You</h3>
+            </section>
                 </Col>
      
                 
