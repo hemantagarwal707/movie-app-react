@@ -1,12 +1,10 @@
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import RouteComponent from './Route';
 function App() {
   return (
-    <div className="App">
-      hello
-    </div>
+    <RouteComponent />
   );
 }
 
