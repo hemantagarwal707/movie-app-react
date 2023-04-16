@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './details.css';
 import axios from 'axios';
+
 import {img_300, img_not_available} from '../../Config';
 const DetailsContainer = ()=>{
     const params = useParams();
@@ -126,7 +127,28 @@ const DetailsContainer = ()=>{
 
     return (
         <>
-            <h1>Details page</h1>
+            <main className='detailsPage'>
+            <Container>
+                {
+                    titleName && titleName !==  '' ? renderDataHtml() : 'Loading...'
+                }
+                
+            </Container>
+            <section className='section'>
+                <div  className='contentHead'>
+                    <Container>
+                        <Row>
+                            <Col className='col-12'>
+                                {
+                                    credits && credits.length > 0 ? <DarkVariantExample data={credits} /> : 'Lading data...'
+                                }
+                                
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+            </section>
+        </main>
         </>
     )
 }
