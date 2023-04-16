@@ -4,13 +4,14 @@ import {img_300, img_not_available} from '../../Config';
 const CardMoviesComponents = ({data,mediaType})=>{
    console.log('data',data)
 
-    const id = data.id;
-    const media_type = data.media_type ? data.media_type : data.type ? data.type : mediaType;
-    const ImageURL =  data.poster_path ? img_300 + data.poster_path : img_not_available;
-    const title = data.original_title || data.name;
-    
-    const vote_average = parseInt(data.vote_average);
-    
+ 
+   const title = data.original_title || data.name;
+   const id = data.id;
+   const ImageURL =  data.poster_path ? img_300 + data.poster_path : img_not_available;
+   const media_type = data.media_type ? data.media_type : data.type ? data.type : mediaType;
+   const release_date =  data.release_date || data.first_air_date;
+   const vote_average = parseInt(data.vote_average);
+   const original_language = data.original_language || ''
     return (
         <>
             <div className='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6'>
@@ -25,13 +26,21 @@ const CardMoviesComponents = ({data,mediaType})=>{
                     <circle className="circle-chart__circle" stroke="#4eb04b" strokeWidth="2" strokeDasharray={`${vote_average}0,100`} cx="15" cy="15" r="14"></circle>
                 </svg>
                 <b>{vote_average}</b> 
-            </div>
-            
-               
+                </div>
+                <div className="hd">{media_type} 
+                <b>{original_language}</b></div>
             </figure>
-            
-        </Link>
+            <div className="video-content"> 
+                <ul className="tags">
+                    <li>Release Date</li>
+                </ul>
+                <small className="range">{release_date}</small>
+                <h3 className="name">
+                    {title}
+                </h3>
             </div>
+        </Link>
+    </div>
         </>
     )
 }
