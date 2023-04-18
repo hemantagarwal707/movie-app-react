@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import CardMoviesComponents from '../../Components/CardMovies';
+import PaginationComponent from '../../Components/Pagination';
 const HomeContainer = ()=>{
     const [content, setContent] = useState([]);
     const [pageno, setPageno] = useState(1)
@@ -24,6 +25,14 @@ const HomeContainer = ()=>{
         GetDataTrending();
         //eslint-disable-next-line
     }, [])
+    const handleClick = (number)=>{
+        setPageno(number);
+    }
+    useEffect(()=>{
+        console.log('Trending Component didupdate mount');
+        GetDataTrending();
+        //eslint-disable-next-line
+    }, [pageno])
 
     return (
         <main className='homePage'>
@@ -40,7 +49,9 @@ const HomeContainer = ()=>{
                         return (<CardMoviesComponents key={item.id} data={item} mediaType="tv"/>)
                     }) : 'Loading ....'
                 }
-
+                {
+                    paginationno && paginationno > 1 ? <PaginationComponent maxnum={paginationno} activenum={pageno} handleClick={handleClick}/> : ''
+                }
           
                 
             </Row>
