@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
-
+import './style.css';
 import axios from 'axios';
 import {BsFillXCircleFill } from "react-icons/bs";
 
