@@ -19,9 +19,8 @@ const HomeContainer = ()=>{
 
     }
 
-
     useEffect(()=>{
-       
+        console.log('Trending Component did mount');
         GetDataTrending();
         //eslint-disable-next-line
     }, [])
