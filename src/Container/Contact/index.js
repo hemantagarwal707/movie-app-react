@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { BsFacebook, BsLinkedin, BsTwitter,  BsGithub } from "react-icons/bs";
 import { SiLeetcode , SiGeeksforgeeks } from "react-icons/si";
+import './style.css';
 const  ContactContainer = ()=>{
     const myData = [
        
