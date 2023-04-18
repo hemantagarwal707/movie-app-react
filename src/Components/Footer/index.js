@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import './style.css';
 
 import { BsFacebook, BsLinkedin, BsTwitter,  BsGithub } from "react-icons/bs";
 import { SiLeetcode , SiGeeksforgeeks } from "react-icons/si";
