@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style.css';
 const SearchBarCardComponents = ({searchValue, setSearchValue, typeValue, setTypeValue, filterData})=>{
     
     const changeSearchHandle = (e)=>{
