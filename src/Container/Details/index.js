@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './details.css';
+import DarkVariantExample from '../../Components/Carousel';
 import axios from 'axios';
 
 import {img_300, img_not_available} from '../../Config';
@@ -52,7 +53,7 @@ const DetailsContainer = ()=>{
         fetchData();
         fetchVideo();
         creditsFetch();
-        
+          //eslint-disable-next-line
     }, [])
 
     
