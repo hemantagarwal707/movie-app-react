@@ -1,6 +1,6 @@
 import React from "react"
 import ReactPaginate from "react-paginate";
-
+import './style.css';
 const PaginationComponent = (props)=>{
     const {maxnum, activenum, handleClick} = props
     const forcePageActive = parseInt(activenum) - 1;
