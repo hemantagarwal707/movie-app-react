@@ -1,6 +1,6 @@
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-
+import './style.css';
 import {img_300, no_picture} from '../../Config';
 const handleDragStart = (e) => e.preventDefault();
 
